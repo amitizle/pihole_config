@@ -57,11 +57,11 @@ settings-win.data.microsoft.com
 
 # Skype
 s.gateway.messenger.live.com
+client-s.gateway.messenger.live.com
 ui.skype.com
 pricelist.skype.com
 apps.skype.com
 m.hotmail.com
-s.gateway.messenger.live.com
 sa.symcb.com s1.symcb.com
 sa.symcb.com s2.symcb.com
 sa.symcb.com s3.symcb.com
