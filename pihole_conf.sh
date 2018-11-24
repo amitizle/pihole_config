@@ -2,6 +2,8 @@
 
 set -e
 
+PIHOLE_BIN="${PIHOLE_BIN:-/usr/local/bin/pihole}"
+
 ADLIST_LIST_DEST="${ADLIST_LIST_DEST:-/etc/pihole/adlists.list}"
 WHITELIST_FILE="${WHITELIST_FILE:-whitelist_domains}"
 ADLIST_LIST_ADDONS_FILE="${ADLIST_LIST_ADDONS_FILE:-adlists.list.addons}"
@@ -17,7 +19,7 @@ do
 done < "$WHITELIST_FILE"
 
 echo "Adding whitelist domains"
-[[ "$DRY_RUN" -eq "0" ]] && pihole -w "$all_domains"
+[[ "$DRY_RUN" -eq "0" ]] && $PIHOLE_BIN -w "$all_domains"
 
 tmp_adlists_list=$(mktemp)
 
@@ -37,4 +39,4 @@ echo "Replacing $ADLIST_LIST_DEST with a new adlist.list file"
 mv "$tmp_adlists_list" "$ADLIST_LIST_DEST"
 
 echo "Updating gravity"
-[[ "$DRY_RUN" -eq "0" ]] && pihole -g
+[[ "$DRY_RUN" -eq "0" ]] && $PIHOLE_BIN -g
