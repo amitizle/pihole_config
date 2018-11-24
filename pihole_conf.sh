@@ -15,6 +15,9 @@ DRY_RUN="${DRY_RUN:-0}"
 echo "*** Starting run $RUN_UUID ***"
 
 # Whitelist domains
+# We do one by one, because if we join a string of domains (space seperated) and
+# there's an error in one of the lines in whitelist_domains the whole thing will fail.
+# It should take long only on first run, after that it'll say that domain already exists.
 echo "Reading whitelist domains from $WHITELIST_FILE"
 while IFS= read -r line
 do
