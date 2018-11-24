@@ -19,7 +19,7 @@ do
 done < "$WHITELIST_FILE"
 
 echo "Adding whitelist domains"
-[[ "$DRY_RUN" -eq "0" ]] && $PIHOLE_BIN -w "$all_domains"
+[[ "$DRY_RUN" -eq "0" ]] && "$PIHOLE_BIN" -w "$all_domains"
 
 tmp_adlists_list=$(mktemp)
 
@@ -39,4 +39,4 @@ echo "Replacing $ADLIST_LIST_DEST with a new adlist.list file"
 mv "$tmp_adlists_list" "$ADLIST_LIST_DEST"
 
 echo "Updating gravity"
-[[ "$DRY_RUN" -eq "0" ]] && $PIHOLE_BIN -g
+[[ "$DRY_RUN" -eq "0" ]] && "$PIHOLE_BIN" -g
