@@ -7,7 +7,7 @@ This is my personal configuration, including:
 
 I'm running [pi-hole](https://pi-hole.net/) on a Raspberry Pi 3 Model B+ and a [Mikrotik hAP ac](https://mikrotik.com/product/RB962UiGS-5HacT2HnT), setting pi-hole as the upstream DNS provider for the Mikrotik.
 
-I've setup the [pihole_conf.sh](https://github.com/amitizle/pihole_config/blob/master/pihole_conf.sh) to be running every day as a cronjob.
+I've setup the [pihole_conf.sh](https://github.com/amitizle/pihole_config/blob/master/pihole_conf.sh) to be running every hour as a cronjob.
 
 ## Setup cron
 
