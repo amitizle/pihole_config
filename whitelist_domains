@@ -159,7 +159,8 @@ placeholdit.imgix.net
 
 # Dropbox
 dl.dropboxusercontent.com
-ns1.dropbox.com ns2.dropbox.com
+ns1.dropbox.com
+ns2.dropbox.com
 
 # Images on marketwatch
 s.marketwatch.com
