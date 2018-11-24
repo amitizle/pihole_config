@@ -11,15 +11,12 @@ DRY_RUN="${DRY_RUN:-0}"
 
 # Whitelist domains
 echo "Reading whitelist domains from $WHITELIST_FILE"
-all_domains=""
 while IFS= read -r line
 do
   [[ "$line" =~ ^#.*$ ]] || [[ "$line" = "" ]] && continue
-  all_domains="${all_domains} ${line}"
+  [[ "$DRY_RUN" -eq "0" ]] && "$PIHOLE_BIN" -w "$line"
 done < "$WHITELIST_FILE"
 
-echo "Adding whitelist domains"
-[[ "$DRY_RUN" -eq "0" ]] && "$PIHOLE_BIN" -w "$all_domains"
 
 tmp_adlists_list=$(mktemp)
 
