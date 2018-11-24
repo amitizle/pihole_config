@@ -62,11 +62,16 @@ ui.skype.com
 pricelist.skype.com
 apps.skype.com
 m.hotmail.com
-sa.symcb.com s1.symcb.com
-sa.symcb.com s2.symcb.com
-sa.symcb.com s3.symcb.com
-sa.symcb.com s4.symcb.com
-sa.symcb.com s5.symcb.com
+sa.symcb.com
+sa.symcb.com
+sa.symcb.com
+sa.symcb.com
+sa.symcb.com
+s1.symcb.com
+s2.symcb.com
+s3.symcb.com
+s4.symcb.com
+s5.symcb.com
 
 # Microsoft Office
 officeclient.microsoft.com
