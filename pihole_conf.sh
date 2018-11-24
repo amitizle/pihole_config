@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 
-PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-
 set -e
 
+RUN_UUID=$(cat /proc/sys/kernel/random/uuid)
+
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 PIHOLE_BIN="${PIHOLE_BIN:-/usr/local/bin/pihole}"
 
 ADLIST_LIST_DEST="${ADLIST_LIST_DEST:-/etc/pihole/adlists.list}"
 WHITELIST_FILE="${WHITELIST_FILE:-whitelist_domains}"
 ADLIST_LIST_ADDONS_FILE="${ADLIST_LIST_ADDONS_FILE:-adlists.list.addons}"
 DRY_RUN="${DRY_RUN:-0}"
+
+echo "*** Starting run $RUN_UUID ***"
 
 # Whitelist domains
 echo "Reading whitelist domains from $WHITELIST_FILE"
@@ -39,3 +42,5 @@ mv "$tmp_adlists_list" "$ADLIST_LIST_DEST"
 
 echo "Updating gravity"
 [[ "$DRY_RUN" -eq "0" ]] && "$PIHOLE_BIN" -g
+
+echo "*** Finished run $RUN_UUID ***"
