@@ -14,7 +14,7 @@ I've setup the [pihole_conf.sh](https://github.com/amitizle/pihole_config/blob/m
 This is just a personal preference, it's way easier for me rather than setup some redundant bootstrapping tool, thus involve manual steps.
 I'm also assuming that all permissions (i.e. to `/var/log`) already setup the way you like to.
 
-  1. Clone the repo, assuming to `/opt/pihole_config`: `git clone https://github.com/amitizle/pihole_config/blob/master/pihole_conf.sh opt/pihole_config`.
+  1. Clone the repo, assuming to `/opt/pihole_config`: `git clone https://github.com/amitizle/pihole_config.git opt/pihole_config`.
   2. Setup the cronjob (using `crontab -e`): `0 */1 * * * bash -c "cd /opt/pihole_config && git pull && ./pihole_conf.sh &>> /var/log/pihole_config.log"`
 
 ## Caveats
