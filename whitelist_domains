@@ -54,6 +54,9 @@ eds.xboxlive.com
 www.xboxlive.com
 v10.vortex-win.data.microsoft.com
 settings-win.data.microsoft.com
+# https://www.reddit.com/r/pihole/comments/a00w24/ive_created_a_small_stupid_pihole_configuration/eae9nno/
+fe2.update.microsoft.com
+au.download.windowsupdate.com
 
 # Skype
 s.gateway.messenger.live.com
