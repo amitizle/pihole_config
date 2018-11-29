@@ -24,3 +24,10 @@ The [Whitelist file](https://github.com/amitizle/pihole_config/blob/master/white
   * Every line starts with `#` is treated as a comment.
   * Empty lines are ignored.
   * Every line can only contain **one domain**.
+
+## Configuration / environment variables
+
+Here's a list of some environment variables you can setup in order
+to customize your experience using this script:
+
+  * `FIREBOG_LIST_TYPE` - There are three types in [Wally3k's list](https://v.firebog.net/hosts/lists.php): `tick`, `nocross` and `all`.

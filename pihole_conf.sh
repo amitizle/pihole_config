@@ -12,6 +12,8 @@ WHITELIST_FILE="${WHITELIST_FILE:-whitelist_domains}"
 ADLIST_LIST_ADDONS_FILE="${ADLIST_LIST_ADDONS_FILE:-adlists.list.addons}"
 DRY_RUN="${DRY_RUN:-0}"
 
+FIREBOG_LIST_TYPE="${FIREBOG_LIST_TYPE:-nocross}"
+
 echo "*** Starting run $RUN_UUID ***"
 
 # Whitelist domains
@@ -29,7 +31,8 @@ done < "$WHITELIST_FILE"
 tmp_adlists_list=$(mktemp)
 
 # Get the updated adlists.list and update pihole
-curl -sL "https://v.firebog.net/hosts/lists.php?type=nocross" -o "$tmp_adlists_list"
+echo "Pull Wally3k's updated list; type=${FIREBOG_LIST_TYPE}"
+curl -sL "https://v.firebog.net/hosts/lists.php?type=${FIREBOG_LIST_TYPE}" -o "$tmp_adlists_list"
 
 # Add the lists from the addons
 
